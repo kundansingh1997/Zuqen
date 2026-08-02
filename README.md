@@ -1,2 +1,2 @@
 # Zuqen
-Real Ludo Money Multiplayer App. 
+Real Money Gaming platform App
