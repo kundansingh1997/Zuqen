@@ -14,9 +14,19 @@ export default function OtpScreen() {
 
   return (
     <View style={styles.container}>
-      <StatusBar barStyle="light-content" backgroundColor="#050505" />
 
-      <Text style={styles.title}>OTP Verification</Text>
+      <StatusBar
+        barStyle="light-content"
+        backgroundColor="#050505"
+      />
+
+      <Text style={styles.title}>
+        OTP VERIFICATION
+      </Text>
+
+      <Text style={styles.brand}>
+        ZUQEN
+      </Text>
 
       <Text style={styles.subtitle}>
         Enter the 6-digit OTP sent to your mobile number
@@ -25,28 +35,35 @@ export default function OtpScreen() {
       <TextInput
         style={styles.input}
         placeholder="Enter OTP"
-        placeholderTextColor="#777"
+        placeholderTextColor="#888"
         keyboardType="number-pad"
         maxLength={6}
         value={otp}
         onChangeText={setOtp}
       />
-
-      <TouchableOpacity
+            <TouchableOpacity
         style={styles.button}
-        onPress={() => {
-          if (otp.length !== 6) {
-            alert("Enter valid OTP");
-            return;
-          }
-
-          router.replace("/home");
-        }}
+        onPress={() => router.replace("/home")}
       >
-        <Text style={styles.buttonText}>VERIFY OTP</Text>
+        <Text style={styles.buttonText}>
+          VERIFY OTP
+        </Text>
       </TouchableOpacity>
 
-      <Text style={styles.resend}>Resend OTP</Text>
+      <TouchableOpacity>
+        <Text style={styles.resend}>
+          Resend OTP
+        </Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        onPress={() => router.replace("/login")}
+      >
+        <Text style={styles.back}>
+          ← Back to Login
+        </Text>
+      </TouchableOpacity>
+
     </View>
   );
 }
@@ -56,46 +73,52 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#050505",
     justifyContent: "center",
-    paddingHorizontal: 25,
+    padding: 25,
   },
 
   title: {
+    color: "#FFFFFF",
+    fontSize: 22,
+    textAlign: "center",
+  },
+
+  brand: {
     color: "#FFD700",
-    fontSize: 32,
+    fontSize: 40,
     fontWeight: "900",
     textAlign: "center",
-    marginBottom: 15,
+    marginBottom: 10,
   },
 
   subtitle: {
-    color: "#CCCCCC",
-    fontSize: 16,
+    color: "#BBBBBB",
     textAlign: "center",
-    marginBottom: 40,
+    marginBottom: 30,
+    fontSize: 16,
   },
 
   input: {
-    backgroundColor: "#111",
-    color: "#fff",
+    backgroundColor: "#111111",
+    color: "#FFFFFF",
     borderWidth: 1,
     borderColor: "#FFD700",
-    borderRadius: 12,
-    fontSize: 22,
+    borderRadius: 14,
+    padding: 16,
     textAlign: "center",
-    paddingVertical: 15,
+    fontSize: 22,
     letterSpacing: 8,
+    marginBottom: 25,
   },
 
   button: {
     backgroundColor: "#FFD700",
-    borderRadius: 15,
-    paddingVertical: 16,
+    borderRadius: 14,
+    padding: 18,
     alignItems: "center",
-    marginTop: 30,
   },
 
   buttonText: {
-    color: "#000",
+    color: "#000000",
     fontSize: 18,
     fontWeight: "900",
   },
@@ -104,6 +127,13 @@ const styles = StyleSheet.create({
     color: "#FFD700",
     textAlign: "center",
     marginTop: 25,
+    fontSize: 16,
+  },
+
+  back: {
+    color: "#FFFFFF",
+    textAlign: "center",
+    marginTop: 20,
     fontSize: 15,
   },
 });

@@ -1,156 +1,243 @@
 import React from "react";
 import {
   View,
-  Text,
+ Text,
   StyleSheet,
-  TouchableOpacity,
-  Image,
   StatusBar,
+  TouchableOpacity,
+  ScrollView,
 } from "react-native";
+
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
-      <StatusBar barStyle="light-content" backgroundColor="#050505" />
 
-      <View style={styles.topGlow} />
+      <StatusBar
+        backgroundColor="#050505"
+        barStyle="light-content"
+      />
 
-      <View style={styles.logoContainer}>
-        <Image
-          source={require("../../assets/images/icon.png")}
-          style={styles.logo}
-        />
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+      >
 
-        <Text style={styles.title}>ZUQEN</Text>
-
-        <Text style={styles.subtitle}>
-  PLAY & WIN{" "}
-  <Text style={{ color: "#FFD700", fontWeight: "900" }}>
-    REAL MONEY
-  </Text>
-</Text>
-
-        <Text style={styles.description}>
-          India's Premium Skill Gaming Platform
+        <Text style={styles.welcome}>
+          Welcome Back 👋
         </Text>
-      </View>
 
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>ENTER APP</Text>
-      </TouchableOpacity>
+        <Text style={styles.brand}>
+          ZUQEN
+        </Text>
 
-      <View style={styles.footerContainer}>
-  <Text style={styles.footerItem}>🛡️ 100% Secure</Text>
-  <Text style={styles.footerDot}>•</Text>
-  <Text style={styles.footerItem}>⚡ Fast Withdrawals</Text>
-  <Text style={styles.footerDot}>•</Text>
-  <Text style={styles.footerItem}>🏆 Fair Play</Text>
+        <View style={styles.walletCard}>
+
+          <Text style={styles.walletTitle}>
+            Wallet Balance
+          </Text>
+
+          <Text style={styles.balance}>
+            ₹0.00
+          </Text>
+
+          <View style={styles.walletButtons}>
+
+            <TouchableOpacity style={styles.addMoney}>
+              <Text style={styles.buttonText}>
+                Add Money
+              </Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.withdraw}>
+              <Text style={styles.buttonText}>
+                Withdraw
+              </Text>
+            </TouchableOpacity>
+
+          </View>
+
+        </View>
+
+        <Text style={styles.sectionTitle}>
+          Main Games
+        </Text>
+        <TouchableOpacity style={styles.gameCard}>
+          <Text style={styles.gameEmoji}>🎲</Text>
+
+          <View style={styles.gameInfo}>
+            <Text style={styles.gameTitle}>
+              Ludo
+            </Text>
+
+            <Text style={styles.gameSubtitle}>
+              Multiplayer • Entry ₹10
+            </Text>
+          </View>
+
+          <Text style={styles.playNow}>
+            PLAY
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.gameCard}>
+          <Text style={styles.gameEmoji}>🐍</Text>
+
+          <View style={styles.gameInfo}>
+            <Text style={styles.gameTitle}>
+              Snake
+            </Text>
+
+            <Text style={styles.gameSubtitle}>
+              High Score • Entry ₹5
+            </Text>
+          </View>
+
+          <Text style={styles.playNow}>
+            PLAY
+          </Text>
+        </TouchableOpacity>
+
+        <Text style={styles.sectionTitle}>
+          Coming Soon
+        </Text>
+
+        <View style={styles.comingCard}>
+          <Text style={styles.comingText}>
+            🚗 Car Racing
+          </Text>
+        </View>
+
+        <View style={styles.comingCard}>
+          <Text style={styles.comingText}>
+            🏍️ Bike Racing
+          </Text>
+        </View>
+<View style={styles.gamesSection}>
+
+  <Text style={styles.sectionTitle}>🎮 Main Games</Text>
+
+  <TouchableOpacity style={styles.gameCard}>
+    <Text style={styles.gameTitle}>🎲 Ludo</Text>
+    <Text style={styles.gameSub}>Play with Real Money</Text>
+  </TouchableOpacity>
+
+  <TouchableOpacity style={styles.gameCard}>
+    <Text style={styles.gameTitle}>🐍 Snake</Text>
+    <Text style={styles.gameSub}>Play with Real Money</Text>
+  </TouchableOpacity>
+
+  <Text style={styles.sectionTitle}>🚀 Coming Soon</Text>
+
+  <View style={styles.comingCard}>
+    <Text style={styles.comingText}>
+      🚗 Car Racing
+    </Text>
+  </View>
+
+  <View style={styles.comingCard}>
+    <Text style={styles.comingText}>
+      🏍 Bike Racing
+    </Text>
+  </View>
+
 </View>
+        <View style={styles.bottomNav}>
+
+          <TouchableOpacity style={styles.navItem}>
+            <Text style={styles.navIcon}>🏠</Text>
+            <Text style={styles.navText}>Home</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.navItem}>
+            <Text style={styles.navIcon}>💰</Text>
+            <Text style={styles.navText}>Wallet</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.navItem}>
+            <Text style={styles.navIcon}>📜</Text>
+            <Text style={styles.navText}>History</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.navItem}>
+            <Text style={styles.navIcon}>👤</Text>
+            <Text style={styles.navText}>Profile</Text>
+          </TouchableOpacity>
+
+        </View>
+
+      </ScrollView>
+
     </View>
   );
 }
+
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#050505",
-    justifyContent: "space-between",
-    alignItems: "center",
-    paddingTop: 70,
-    paddingBottom: 45,
-    paddingHorizontal: 25,
+  gamesSection: {
+    marginHorizontal: 20,
+    marginTop: 10,
+    marginBottom: 25,
   },
 
-  topGlow: {
-    position: "absolute",
-    top: -120,
-    width: 420,
-    height: 420,
-    borderRadius: 210,
-    backgroundColor: "#FFD70022",
+  gameCard: {
+    backgroundColor: "#111111",
+    borderRadius: 18,
+    borderWidth: 1,
+    borderColor: "#FFD70022",
+    padding: 18,
+    marginBottom: 15,
   },
 
-  logoContainer: {
-    alignItems: "center",
-    marginTop: 20,
-  },
-
-  logo: {
-    width: 145,
-    height: 145,
-    resizeMode: "contain",
-    marginBottom: 20,
-  },
-
-  title: {
+  gameTitle: {
     color: "#FFD700",
-    fontSize: 36,
-    fontWeight: "900",
-    letterSpacing: 4,
-  },
-
-  subtitle: {
-    color: "#FFFFFF",
     fontSize: 22,
-    fontWeight: "800",
-    marginTop: 18,
-    textAlign: "center",
-  },
-
-  description: {
-  color: "#C8C8C8",
-  fontSize: 17,
-  fontWeight: "500",
-  letterSpacing: 0.5,
-  marginTop: 12,
-  textAlign: "center",
-},
-
-  button: {
-  width: "100%",
-  backgroundColor: "#FFD700",
-  paddingVertical: 15,
-  borderRadius: 18,
-  alignItems: "center",
-  elevation: 16,
-shadowColor: "#FFD700",
-shadowOpacity: 0.45,
-shadowRadius: 12,
-shadowOffset: {
-  width: 0,
-  height: 5,
-},
-},
-
-  buttonText: {
-    color: "#000",
-    fontSize: 18,
     fontWeight: "900",
-    letterSpacing: 1,
   },
 
-  footer: {
-    color: "#777777",
+  gameSub: {
+    color: "#CCCCCC",
     fontSize: 14,
+    marginTop: 5,
+  },
+
+  comingCard: {
+    backgroundColor: "#1A1A1A",
+    borderRadius: 16,
+    padding: 16,
+    marginTop: 12,
+    borderWidth: 1,
+    borderColor: "#333333",
+  },
+
+  comingText: {
+    color: "#AAAAAA",
+    fontSize: 18,
+    fontWeight: "700",
     textAlign: "center",
   },
-footerContainer: {
-  flexDirection: "row",
-  alignItems: "center",
-  justifyContent: "center",
-  marginTop: 40,
-marginBottom: 55,
-paddingBottom: 10,
-},
 
-footerItem: {
-  color: "#D8D8D8",
-  fontSize: 13,
-  fontWeight: "700",
-  letterSpacing: 0.4,
-},
-},
+  bottomNav: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center",
+    backgroundColor: "#111111",
+    margin: 20,
+    paddingVertical: 16,
+    borderRadius: 20,
+    borderWidth: 1,
+    borderColor: "#FFD70022",
+  },
 
-footerDot: {
-  color: "#FFD700",
-  marginHorizontal: 8,
-},
+  navItem: {
+    alignItems: "center",
+  },
+
+  navIcon: {
+    fontSize: 22,
+    marginBottom: 4,
+  },
+
+  navText: {
+    color: "#FFFFFF",
+    fontSize: 12,
+    fontWeight: "700",
+  },
 });
