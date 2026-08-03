@@ -7,6 +7,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    env:
+      EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+
     steps:
       - uses: actions/checkout@v4
 
@@ -18,7 +21,6 @@ jobs:
 
       - uses: expo/expo-github-action@v8
         with:
-         expo-token: ${{ secrets.EXPO_TOKEN }}
+          eas-version: latest
 
       - run: npx eas build --platform android --profile preview --non-interactive
-
