@@ -44,8 +44,9 @@
     "extra": {
       "router": {},
       "eas": {
-        "projectId": "f084552e-7598-4e08-818d-8775ebb5a956"
+        "projectId": "cd1a3cb9-e98d-4a54-8070-abbd7e179b24"
       }
-    }
+    },
+    "owner": "zuqenofficial"
   }
 }
